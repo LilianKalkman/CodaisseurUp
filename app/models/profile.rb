@@ -1,7 +1,8 @@
-class Profile < ApplicationRecord
-  belongs_to :user
 
-  class Profile < ApplicationRecord
+class Profile < ApplicationRecord
+
+    belongs_to :user
+
     validates :first_name, presence: true
     validates :last_name, presence: true
     validates :bio, presence: true
@@ -9,7 +10,4 @@ class Profile < ApplicationRecord
     def full_name
       "#{first_name} #{last_name}"
     end
-  end
-
-
 end
