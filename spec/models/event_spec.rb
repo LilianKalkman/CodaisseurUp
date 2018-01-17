@@ -35,8 +35,26 @@ RSpec.describe Event, type: :model do
     it "returns a sorted array of events by price" do
     expect(Event.order_by_price).to eq([event1, event2, event3])
     end
-
   end
+
+  describe ".order_by_letter" do
+  let!(:event1) {create :event, name: "Anna"}
+  let!(:event2) {create :event, name: "Bert"}
+  let!(:event3) {create :event, name: "Claire"}
+
+    it "returns a sorted array of events by letter" do
+      expect(Event.order_by_letter).to eq([event1, event2,event3])
+    end
+  end
+
+  # describe "association with event" do
+  #   let(:user1) {create :user}
+  #   let!(:event1) {create :event, user: user1}
+  #
+  #   it "belongs to a event" do
+  #     expect(user1.events).to include(event1)
+  #   end
+  # end
 
 
 end

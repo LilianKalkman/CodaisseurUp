@@ -14,7 +14,11 @@ class Event < ApplicationRecord
     end
 
     def self.order_by_price
-      order :price 
+      order :price
+    end
+
+    def self.order_by_letter
+      all.sort
     end
 
 
