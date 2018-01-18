@@ -32,3 +32,9 @@
 <% @events.each do |category| %>
   <span class="label label-success"><%= category.name %></span>
 <% end %>
+
+<h4>Photos</h4>
+
+<% @event.photos.each do |photo| %>
+  <%= image_tag photo.image.url %>
+<% end %>
