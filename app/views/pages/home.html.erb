@@ -11,11 +11,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">Artikel 1<br>
+    <div class="col-lg-4">Event 1<br>
       -------<br>
       met heel veel tekst<br></div>
-    <div class="col-lg-4">Artikel 2<br>-----<br></div>
-    <div class="col-lg-4">Artikel 3<br> -------<br></div>
+    <div class="col-lg-4">Event 2<br>-----<br></div>
+    <div class="col-lg-4">Event 3<br> -------<br></div>
   </div>
   <div class="row">
     <div class="col-lg-4">---</div>
@@ -31,5 +31,13 @@
 
 
   <div>
-    <img src="../../../assets/images/IMG_0120.jpg" alt="mooooi" height="200px" width="200px">
+    <img src="../../../assets/images/IMG_0120.jpg" alt="mislukt" height="200px" width="200px">
   </div>
+
+
+
+  <h4>Photos</h4>
+
+  <% @event.photos.each do |photo| %>
+    <%= image_tag photo.image.url %>
+  <% end %>
