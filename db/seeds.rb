@@ -37,4 +37,4 @@ Dani = User.create!(email: "dani@hotmail.com", password:"1234567")
 
 photo1 = Photo.create!(remote_image_url:"http://res.cloudinary.com/dknq5n8bi/image/upload/c_scale,w_3264/v1516272507/IMG_0243_xjrb9y.jpg", event: event1)
 photo2 = Photo.create!(remote_image_url:"http://res.cloudinary.com/dknq5n8bi/image/upload/v1516272556/IMG_2558_skdhgp.jpg", event: event2)
-photo3 = Photo.create!(remote_image_url:"cl_image_tag("IMG_0093_iuqhbw.jpg")", event: event1)
+photo3 = Photo.create!(remote_image_url:"http://res.cloudinary.com/dknq5n8bi/image/upload/c_scale,w_3264/v1516272507/IMG_0243_xjrb9y.jpg", event: event1)
