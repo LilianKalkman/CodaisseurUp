@@ -1,0 +1,85 @@
+
+<%= form_for @event, html: { multipart: true } do |f| %>
+
+  <div class="form-group">
+    <label>Listing name</label>
+    <%= f.text_field :name, placeholder: "Listing name of event", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <%= f.text_area :description, rows: 5, placeholder: "Say something about this event", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Location</label>
+    <%= f.select :location, [["Amsterdam","Amstardam"], ["Kiev", "Kiev"], ["Diemen", "Diemen"]], prompt: "Select the sity", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Price</label>
+    <div class="input-group">
+      <div class="input-group-addon">€</div>
+      <%= f.number_field :price, placeholder: "per person", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Capacity</label>
+    <div class="input-group">
+      <div class="input-group-addon"></div>
+      <%= f.number_field :price, placeholder: "not more than 30 persons", class: "form-control" %>
+    </div>
+  </div>
+
+  <label>Categories</label>
+
+<%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+  <div class="form-group">
+    <%= b.check_box(class: "check_box") %> <%= b.object.name %>
+  </div>
+<% end %>
+
+  <div class="form-group">
+    <%= f.check_box :includes_food %> Foods includes?
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box :includes_drinks %> Drinks includes?
+  </div>
+
+  <div class="form-group">
+    <label> Date of event (starts) </label>
+    <%= f.datetime_select :starts_at, placeholder: "Event starts at:", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Date of event (ends)</label>
+    <%= f.datetime_select :ends_at, placeholder: "Event ends at:", class: "form-control" %>
+  </div>
+
+  <label>Photos</label>
+  <div class="form-group">
+    <span class="btn btn-default">
+      Upload photos
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </span>
+  </div>
+
+  <div id="photos">
+    <%= render 'photos/list' %>
+  </div>
+
+  <label>Publish this place?</label>
+
+  <div class="form-group">
+    <%= f.check_box :active %> Active
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+
+
+
+<% end %>
