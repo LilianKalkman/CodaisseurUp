@@ -19,7 +19,8 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      image_params.each do |image| @event.photos.create(image: image)
+      image_params.each do |image|
+        @event.photos.create(image: image)
       end
 
       redirect_to @event, notice: "Event created"
@@ -64,5 +65,5 @@ class EventsController < ApplicationController
   def image_params
     params[:image].present? ? params.require(:images) : []
   end
-  
+
 end
