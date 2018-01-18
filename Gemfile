@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'cloudinary', '1.2.3'
+
 # Use jQuery for easier javascript
 gem 'jquery-rails', '~> 4.3.1'
 # Use Capistrano for deployment
