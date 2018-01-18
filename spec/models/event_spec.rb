@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  #
+
   describe "validations" do
 
     it "is invalid without a name" do
@@ -15,6 +15,12 @@ RSpec.describe Event, type: :model do
       event.valid?
       expect(event.errors).to have_key(:description)
     end
+  end
+
+# MET SHOULDE MATCHERS:
+  describe "validations" do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:description)}
   end
 
   describe "#bargain?" do
@@ -47,14 +53,20 @@ RSpec.describe Event, type: :model do
     end
   end
 
-  # describe "association with event" do
+  # describe "association with user" do
   #   let(:user1) {create :user}
-  #   let!(:event1) {create :event, user: user1}
   #
-  #   it "belongs to a event" do
-  #     expect(user1.events).to include(event1)
+  #   it "event belongs to a user" do
+  #     expect(event.user).to eq(user1)
   #   end
   # end
+
+
+  #SHOULDA WAY:
+
+  describe "association with user" do
+    it {is_expected.to belong_to :user}
+  end
 
 
 end
