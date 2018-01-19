@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # 
+  #
   # describe "association with event" do
   #   let(:user) {create :user}
   #   let!(:event) {create :event, user: user}

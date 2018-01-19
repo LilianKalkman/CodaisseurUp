@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
          has_many :events, dependent: :destroy
          has_one :profile
+         has_many :registrations, dependent: :destroy
+         has_many :visited_events, through: :registrations, source: :event
 
         def full_name
           return profile.full_name if profile?
