@@ -1,6 +1,7 @@
 
 Photo.destroy_all
 Category.destroy_all
+Registration.destroy_all
 Event.destroy_all
 Profile.destroy_all
 User.destroy_all
@@ -38,3 +39,7 @@ Dani = User.create!(email: "dani@hotmail.com", password:"1234567")
 photo1 = Photo.create!(remote_image_url:"http://res.cloudinary.com/dknq5n8bi/image/upload/c_scale,w_3264/v1516272507/IMG_0243_xjrb9y.jpg", event: event1)
 photo2 = Photo.create!(remote_image_url:"http://res.cloudinary.com/dknq5n8bi/image/upload/v1516272556/IMG_2558_skdhgp.jpg", event: event2)
 photo3 = Photo.create!(remote_image_url:"http://res.cloudinary.com/dknq5n8bi/image/upload/v1516274433/yltgfzmaa7pa6tpua4sh.jpg", event: event1)
+
+
+registration1 = Registration.create!(event: event1, user: Lilian, guests_count: 2, status: "active")
+registration2 = Registration.create!(event: event2, user: Dani, guests_count: 1, status:"non-active")
