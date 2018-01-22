@@ -6,9 +6,15 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :events, except: [:destroy]
+  resources :events, except: [:destroy] do
+    resources :registrations, only: [:create]
+    end
   resources :photos, only: [:destroy]
   resources :profiles, only: [:new, :edit, :create, :update]
-  resources :registrations 
+
+  namespace :api do resources :events
+  end
+
+
 
 end

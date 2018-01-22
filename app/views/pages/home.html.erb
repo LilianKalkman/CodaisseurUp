@@ -14,13 +14,16 @@
 <br>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-4">Event 1<br>
-      -------<br>
-      met heel veel tekst<br></div>
-    <div class="col-lg-4">Event 2<br>-----<br></div>
-    <div class="col-lg-4">Event 3<br> -------<br></div>
-  </div>
+  <% @event_active.each do |event|  %>
+    <div class="row">
+      <div class="col-lg-3"><%= event.name %></div>
+      <div class="col-lg-3">Event 1<br>
+        -------<br>
+        met heel veel tekst<br></div>
+      <div class="col-lg-3">Event 2<br>-----<br></div>
+      <div class="col-lg-3">Event 3<br> -------<br></div>
+    </div>
+  <% end %>
   <div class="row">
     <div class="col-lg-4">---</div>
     <div class="col-lg-4">---</div>

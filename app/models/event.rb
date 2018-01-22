@@ -11,6 +11,9 @@ class Event < ApplicationRecord
     # validates :starts_at, presence: true
     # validates :ends_at, presence: true, date: { after_or_equal_to:  :starts_at}
 
+    def self.active
+      where(active: true)
+    end
 
     def bargain?
       price < 30.00
